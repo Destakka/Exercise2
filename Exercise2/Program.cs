@@ -24,7 +24,15 @@ namespace Exercise2
                 else
                     Console.WriteLine("\n Array can have maximum 20 elements. \n");
             }
-
+            Console.WriteLine("\n-----------------");
+            Console.WriteLine(" enter array elements ");
+            Console.WriteLine("----------------------");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("<" + (i + 1) + "> ");
+                string s1 = Console.ReadLine();
+                arr[i] = Int32.Parse(s1);
+            }
         }
     }
 }
