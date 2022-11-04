@@ -4,7 +4,7 @@ namespace Exercise2
 {
     class List
     {
-        private int[] arr = new int[20];
+        private int[] desta = new int[20];
         private int[] sorted = new int[20];
         private int cmp_count, mov_count, n;
         public List()
@@ -31,47 +31,47 @@ namespace Exercise2
             {
                 Console.Write("<" + (i + 1) + "> ");
                 string s1 = Console.ReadLine();
-                arr[i] = Int32.Parse(s1);
+                desta[i] = Int32.Parse(s1);
             }
         }
         void swap(int x, int y)
         {
             int temp;
-            temp = arr[x];
-            arr[x] = arr[y];
-            arr[y] = temp;
+            temp = desta[x];
+            desta[x] = desta[y];
+            desta[y] = temp;
         }
         void merge(int low, int mid, int high)
         {
-            int i, j, k;
+            int i, DA, k;
             i = low;
-            j = mid + 1;
+            DA = mid + 1;
             k = low;
-            while ((i <= mid) && (j <= high))
+            while ((i <= mid) && (DA <= high))
             {
-                if (arr[i] <= arr[j])
+                if (desta[i] <= desta[DA])
                 {
-                    sorted[k++] = arr[i++];
+                    sorted[k++] = desta[i++];
                 }
                 else
                 {
-                    sorted[k++] = arr[j++];
+                    sorted[k++] = desta[DA++];
                 }
                 cmp_count++;
             }
             while (i <= mid)
             {
-                sorted[k++] = arr[i++];
+                sorted[k++] = desta[i++];
                 mov_count++;
             }
-            while (j <= high)
+            while (DA <= high)
             {
-                sorted[k++] = arr[j++];
+                sorted[k++] = desta[DA++];
                 mov_count++;
             }
             for (i = low; i <= high; i++)
             {
-                arr[i] = sorted[i];
+                desta[i] = sorted[i];
                 mov_count++;
             }
         }
@@ -92,7 +92,7 @@ namespace Exercise2
             Console.WriteLine("-------------------------");
             for (int j = 0; j < n; j++)
             {
-                Console.WriteLine(arr[j] + "\n");
+                Console.WriteLine(desta[j] + "\n");
             }
             Console.WriteLine("\nNumber of comparisons: " + cmp_count);
             Console.WriteLine("\nNumber of data movements: " + mov_count);
