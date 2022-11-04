@@ -85,5 +85,9 @@ namespace Exercise2
             m_sort(mid + 1, high);
             merge(low, mid, high);
         }
+        void display()
+        {
+
+        }
     }
 }
