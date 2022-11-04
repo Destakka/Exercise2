@@ -34,5 +34,12 @@ namespace Exercise2
                 arr[i] = Int32.Parse(s1);
             }
         }
+        void swap(int x, int y)
+        {
+            int temp;
+            temp = arr[x];
+            arr[x] = arr[y];
+            arr[y] = temp;
+        }
     }
 }
