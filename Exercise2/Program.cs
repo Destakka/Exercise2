@@ -41,5 +41,39 @@ namespace Exercise2
             arr[x] = arr[y];
             arr[y] = temp;
         }
+        void merge(int low, int mid, int high)
+        {
+            int i, j, k;
+            i = low;
+            j = mid + 1;
+            k = low;
+            while ((i <= mid) && (j <= high))
+            {
+                if (arr[i] <= arr[j])
+                {
+                    sorted[k++] = arr[i++];
+                }
+                else
+                {
+                    sorted[k++] = arr[j++];
+                }
+                cmp_count++;
+            }
+            while (i <= mid)
+            {
+                sorted[k++] = arr[i++];
+                mov_count++;
+            }
+            while (j <= high)
+            {
+                sorted[k++] = arr[j++];
+                mov_count++;
+            }
+            for (i = low; i <= high; i++)
+            {
+                arr[i] = sorted[i];
+                mov_count++;
+            }
+        }
     }
 }
