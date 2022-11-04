@@ -75,5 +75,15 @@ namespace Exercise2
                 mov_count++;
             }
         }
+        void m_sort(int low, int high)
+        {
+            int mid;
+            if (low >= high)
+                return;
+            mid = (low + high) / 2;
+            m_sort(low, mid);
+            m_sort(mid + 1, high);
+            merge(low, mid, high);
+        }
     }
 }
